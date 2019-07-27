@@ -2,5 +2,6 @@
     "Token":"NjAzOTQ2NzUxNzE1NzA0ODUy.XTpobg.4mxfhcKdSJCffYD3Qz7WhaA6DHM",
     "Welcome_channel": 604147926255665172,
     "Left_channel": 604149341145268234,
-    "pic":"D:\\WorkSpace\\Github\\Shiro_Lu_Bot\\pic\\1.jpg"
+    "pic":["D:\\WorkSpace\\Github\\Shiro_Lu_Bot\\pic\\1.jpg","D:\\WorkSpace\\Github\\Shiro_Lu_Bot\\pic\\2.gif"],
+    "Net_img":["https://i.imgur.com/hZSsi4A.png","https://i.imgur.com/yDurLjj.jpg","https://i.imgur.com/YXbYWnh.png"]
 }

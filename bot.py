@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import json
+import random
 
 with open('setting.json','r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
@@ -26,9 +27,13 @@ async def ping(ctx):
     await ctx.send(f'{round(bot.latency*1000)} (ms)')
 
 @bot.command()
-async def 都行(ctx):
-    pic = discord.File(jdata['pic'])
+async def 隨便(ctx):
+    random_pic = random.choice(jdata['pic'])
+    pic = discord.File(random_pic)
     await ctx.send(file=pic)
-
+@bot.command()
+async def cool(ctx):
+     random_pic = random.choice(jdata['Net_img'])
+     await ctx.send(random_pic)
 
 bot.run(jdata['Token'])    
