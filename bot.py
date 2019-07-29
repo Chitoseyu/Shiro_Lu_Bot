@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
+import os
 
 with open('setting.json','r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
@@ -23,17 +24,28 @@ async def on_member_remove(member):
    await channel.send(f'{member} Leave!')
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(f'{round(bot.latency*1000)} (ms)')
+async def load(ctx,extension):
+    bot.load_extension(F'cmds.{extension}')
+    await ctx.send(F'Loaded {extension} done.')
 
 @bot.command()
-async def 隨便(ctx):
-    random_pic = random.choice(jdata['pic'])
-    pic = discord.File(random_pic)
-    await ctx.send(file=pic)
-@bot.command()
-async def cool(ctx):
-     random_pic = random.choice(jdata['Net_img'])
-     await ctx.send(random_pic)
+async def unload(ctx,extension):
+    bot.unload_extension(F'cmds.{extension}')
+    await ctx.send(F'Un - Loaded {extension} done.')
 
-bot.run(jdata['Token'])    
+@bot.command()
+async def reload(ctx,extension):
+    bot.reload_extension(F'cmds.{extension}')
+    await ctx.send(F'Re - Loaded {extension} done.')
+
+for Filename in os.listdir('./cmds'):
+    if Filename.endswith('.py'):
+        bot.load_extension(F'cmds.{Filename[:-3]}')
+
+if __name__ == "__main__":
+    bot.run(jdata['Token'])   
+
+
+
+
+ 
