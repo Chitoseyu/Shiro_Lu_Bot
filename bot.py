@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands import CommandNotFound
 import json
 import random
 import os
@@ -12,16 +13,12 @@ bot = commands.Bot(command_prefix='')
 @bot.event
 async def on_ready():
     print(" >> Bot is Online << ")
-
 @bot.event
-async def on_member_join(member):
-   channel = bot.get_channel(jdata['Welcome_channel'])
-   await channel.send(f'{member} Join!')
+async def on_command_error(ctx, error):
+    if isinstance(error, CommandNotFound):
+        return
+    raise error
 
-@bot.event
-async def on_member_remove(member):
-   channel = bot.get_channel(jdata['Left_channel'])
-   await channel.send(f'{member} Leave!')
 
 @bot.command()
 async def load(ctx,extension):
