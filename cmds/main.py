@@ -17,7 +17,7 @@ class Main(Cog_Extension):
     @commands.command()
     async def em(self,ctx):
         
-        embed=discord.Embed(title="About me", description="about the bot", color=0x05097a,timestamp=datetime.datetime.now(pytz.timezone('Asia/Shanghai')))
+        embed=discord.Embed(title="About me", url="https://www.plurk.com/black7591" , description="about the bot", color=0x1137ee,timestamp=datetime.datetime.now(pytz.timezone('Asia/Shanghai')))
         embed.set_author(name="ShiroNeko", url="https://i.imgur.com/f7daV5o.png", icon_url="https://i.imgur.com/f7daV5o.png")
         embed.set_thumbnail(url="https://i.imgur.com/vXV374R.jpg")
         embed.add_field(name=1, value=11, inline=True)
