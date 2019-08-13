@@ -18,7 +18,11 @@ async def on_command_error(ctx, error):
     if isinstance(error, CommandNotFound):
         return
     raise error
-
+@bot.event
+async def in_command_error(ctx, error):
+    if isinstance(error, CommandNotFound):
+        return
+    raise error
 
 @bot.command()
 async def load(ctx,extension):
