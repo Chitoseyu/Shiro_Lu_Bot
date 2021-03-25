@@ -12,17 +12,17 @@ class Event(Cog_Extension):
     @commands.Cog.listener()
     async def on_member_join(self,member):
         channel = self.bot.get_channel(jdata['Welcome_channel'])
-        await channel.send(f'{member} Join!')
+        await channel.send(f'{member} 進到了神祕空間( ´ ▽ ` )ﾉ...歡迎你~')
 
     @commands.Cog.listener()
     async def on_member_remove(self,member):
         channel = self.bot.get_channel(jdata['Left_channel'])
-        await channel.send(f'{member} Leave!')
+        await channel.send(f'{member} 離開了(☉_☉)...')
 
     @commands.Cog.listener()
     async def on_message(self,msg):
         if msg.content in (jdata['keyword']) and msg.author != self.bot.user:
-            await msg.channel.send('沒問題！')
+            await msg.channel.send('你說什麼?！')
 
 
 def setup(bot):

@@ -26,13 +26,24 @@ class Main(Cog_Extension):
         embed.add_field(name=4, value=44, inline=True)
         embed.set_footer(text="------------------END------------------")
         await ctx.send(embed=embed) 
+   
     @commands.command()
     async def sayd(self,ctx,*,msg):
         await ctx.message.delete()
         await ctx.send(msg)
+
+      
     @commands.command()
+    @commands.has_permissions(manage_messages=True)
     async def clear(self,ctx,num:int):
-        await ctx.channel.purge(limit=num+1)
+        await ctx.channel.purge(limit=num+1)   
+
+    @commands.command()
+    @commands.has_permissions(manage_messages=True)
+    async def DKF(self,ctx):
+      await ctx.channel.purge(limit=21)
+      
+
 
 
 def setup(bot):
