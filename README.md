@@ -4,7 +4,7 @@
 
 ![boticon](https://i.imgur.com/cydSrgZ.png)
 
-# 如何使用
+# ✅如何使用
  1. 將 bot 邀請到群組 -> [邀請連結](https://discord.com/api/oauth2/authorize?client_id=924884982210641931&permissions=8&scope=bot)
  2. 同意 bot 使用權限
  3. 開始使用
@@ -30,6 +30,5 @@
    ![react_bot](https://i.imgur.com/ftbyHlC.png)
    
    ![react_bot_2](https://i.imgur.com/E7VopSd.png)
-- 更多意義不明的貼圖
-  - cool 
-  - 隨便
+   - 🎲回覆的貼圖為隨機顯示
+ 
