@@ -23,8 +23,11 @@
 
     ![say_bot](https://i.imgur.com/yNpU6Ze.png)
 
+
 - 指令回貼圖 
+
    ![react_bot](https://i.imgur.com/ftbyHlC.png)
+   
    ![react_bot_2](https://i.imgur.com/E7VopSd.png)
 - 更多意義不明的貼圖
   - cool 
