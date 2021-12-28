@@ -23,7 +23,7 @@ class React(Cog_Extension):
         # pic = discord.File(random_pic)
         # await ctx.send(file=pic)
     @commands.command()
-    async def cool(self,ctx):
+    async def 沒錢(self,ctx):
         random_pic = random.choice(jdata['Net_img'])
         await ctx.send(random_pic)
 
