@@ -11,8 +11,8 @@ intent.members = True
 with open('setting.json', 'r', encoding='utf8') as jfile:
     jdata = json.load(jfile)
 
-bot = commands.Bot(command_prefix='',intents = intent)
-
+bot = commands.Bot(command_prefix='', intents=intent)
+##bot = discord.Client()
 
 @bot.event
 async def on_ready():
@@ -33,33 +33,30 @@ async def in_command_error(ctx, error):
         return
     raise error
 
+
 @bot.event
 async def CheckAnyFailure(checks, errors):
     raise checks
 
 
-@bot.command()
-async def load(ctx, extension):
-    bot.load_extension(F'cmds.{extension}')
-    await ctx.send(F'Loaded {extension} done.')
+##@bot.command()
+##async def load(ctx, extension):
+  ##  bot.load_extension(F'cmds.{extension}')
+    ##await ctx.send(F'Loaded {extension} done.')
 
+##@bot.command()
+##async def unload(ctx, extension):
+   ## bot.unload_extension(F'cmds.{extension}')
+  ##await ctx.send(F'Un - Loaded {extension} done.')
 
-@bot.command()
-async def unload(ctx, extension):
-    bot.unload_extension(F'cmds.{extension}')
-    await ctx.send(F'Un - Loaded {extension} done.')
-
-
-@bot.command()
-async def reload(ctx, extension):
-    bot.reload_extension(F'cmds.{extension}')
-    await ctx.send(F'Re - Loaded {extension} done.')
-
-
+##@bot.command()
+  ##async def reload(ctx, extension):
+    ##bot.reload_extension(F'cmds.{extension}')
+        ##await ctx.send(F'Re - Loaded {extension} done.')
 for Filename in os.listdir('./cmds'):
     if Filename.endswith('.py'):
         bot.load_extension(F'cmds.{Filename[:-3]}')
 
 if __name__ == "__main__":
+    keep_alive.keep_alive()
     bot.run(jdata['Token'])
-
