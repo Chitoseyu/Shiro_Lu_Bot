@@ -14,13 +14,13 @@
 # 🤖功能
 - 📋批量刪除訊息 -> **有管理權限的使用者才能使用**
     
-        clear 要刪除的行數  
+        _clear 要刪除的行數  
 
     **刪除後無法復原,請小心使用**
 
 - 📋人為操控 bot 發言
     
-        sayd 要說的話
+        _sayd 要說的話
 
     ![say_bot](https://i.imgur.com/yNpU6Ze.png)
 

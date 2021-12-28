@@ -2,7 +2,12 @@ import discord
 import datetime
 import pytz
 from discord.ext import commands
+from discord.ext.commands import MissingPermissions
 from core.classes import Cog_Extension
+
+intents = discord.Intents.default()
+intents.members = True
+bot = discord.Client(intents=intents)
 
 class Main(Cog_Extension):
 
@@ -17,13 +22,10 @@ class Main(Cog_Extension):
     @commands.command()
     async def em(self,ctx):
         
-        embed=discord.Embed(title="About me", url="https://www.plurk.com/black7591" , description="about the bot", color=0x1137ee,timestamp=datetime.datetime.now(pytz.timezone('Asia/Shanghai')))
-        embed.set_author(name="ShiroNeko", url="https://i.imgur.com/f7daV5o.png", icon_url="https://i.imgur.com/f7daV5o.png")
+        embed=discord.Embed(title="作者Web", url="https://chitoseyu.github.io/" , description="about the bot", color=0x1137ee,timestamp=datetime.datetime.now(pytz.timezone('Asia/Taipei')))
+        embed.set_author(name="Chitoseyu", url="https://i.imgur.com/ygaCR2U.jpg", icon_url="https://i.imgur.com/iNtrx7P.png")
         embed.set_thumbnail(url="https://i.imgur.com/vXV374R.jpg")
-        embed.add_field(name=1, value=11, inline=True)
-        embed.add_field(name=2, value=22, inline=True)
-        embed.add_field(name=3, value=33, inline=True)
-        embed.add_field(name=4, value=44, inline=True)
+        embed.add_field(name="Bot 功能", value="請使用 help 查看目前已開發功能")
         embed.set_footer(text="------------------END------------------")
         await ctx.send(embed=embed) 
    
@@ -32,16 +34,23 @@ class Main(Cog_Extension):
         await ctx.message.delete()
         await ctx.send(msg)
 
-      
     @commands.command()
     @commands.has_permissions(manage_messages=True)
     async def clear(self,ctx,num:int):
-        await ctx.channel.purge(limit=num+1)   
+        await ctx.channel.purge(limit=num+1)
+    @clear.error
+    async def clear_error(self, ctx, error):
+      if isinstance(error, MissingPermissions):
+        await ctx.send(f"你沒有權限進行這項操作哦⛔ ")
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
     async def DKF(self,ctx):
-      await ctx.channel.purge(limit=21)
+        await ctx.channel.purge(limit=21)
+    @DKF.error
+    async def DKF_error(self, ctx, error):
+      if isinstance(error, MissingPermissions):
+        await ctx.send(f"你沒有權限進行這項操作哦⛔ ")
       
 
 

@@ -4,20 +4,26 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 
 
+intents = discord.Intents.default()
+intents.members = True
+bot = discord.Client(intents=intents)
+
 
 with open('setting.json','r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
 
 class Event(Cog_Extension):
     @commands.Cog.listener()
+    @bot.event
     async def on_member_join(self,member):
-        channel = self.bot.get_channel(jdata['Welcome_channel'])
-        await channel.send(f'{member} 進到了神祕空間( ´ ▽ ` )ﾉ...歡迎你~')
+          channel = self.bot.get_channel(jdata['Welcome_channel'])   
+          await channel.send(f"<@{member.id}> 你好呀⛩️ 記得把群名片改成遊戲內ID哦 (´ ▽ ` )ﾉ 歡迎你~" )
+        
 
     @commands.Cog.listener()
     async def on_member_remove(self,member):
         channel = self.bot.get_channel(jdata['Left_channel'])
-        await channel.send(f'{member} 離開了(☉_☉)...')
+        await channel.send(f'{member} 離開了🚓 ...')
 
     @commands.Cog.listener()
     async def on_message(self,msg):

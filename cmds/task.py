@@ -9,11 +9,6 @@ class Task(Cog_Extension):
 
 def setup(bot):
     bot.add_cog(Task(bot))
-'''       async def interval():
-           await self.bot.wait_until_ready()
-           self.channel = self.bot.get_channel()
-           while not self.bot.is_closed():
-                    await self
-'''
+
 
 
