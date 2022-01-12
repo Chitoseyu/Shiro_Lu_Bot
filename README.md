@@ -20,7 +20,7 @@
 
 - 📋 人為操控 bot 發言
     
-        _sayd 要說的話
+        _sa 要說的話
 
     ![say_bot](https://i.imgur.com/yNpU6Ze.png)
 
