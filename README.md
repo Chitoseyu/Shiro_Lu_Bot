@@ -37,4 +37,4 @@
         _help
 
    ![help_bot](https://i.imgur.com/k8xe2Ai.png)
-   - 🎲  會隨著功能更新調整
+   - 🎲  功能暫時停止開發

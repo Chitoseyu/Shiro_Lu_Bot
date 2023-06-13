@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord.ext.commands import MissingPermissions
 from core.classes import Cog_Extension
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
 bot = discord.Client(intents=intents)
 
@@ -55,5 +55,5 @@ class Main(Cog_Extension):
 
 
 
-def setup(bot):
-    bot.add_cog(Main(bot))
+async def setup(bot):
+    await bot.add_cog(main(bot))
